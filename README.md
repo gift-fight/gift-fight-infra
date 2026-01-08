@@ -13,7 +13,7 @@ flowchart TB
     end
 
     subgraph HETZNER["Hetzner Cloud (Helsinki)"]
-        subgraph K8S["Kubernetes Cluster (Talos Linux)"]
+        subgraph K8S["K8s Cluster (Talos Linux)"]
             CP["Control Plane\ncx22 · 2 vCPU · 4GB"]
             SW["Service Worker\ncx22 · 2 vCPU · 4GB"]
             AW["Application Worker\ncx32 · 4 vCPU · 8GB"]
