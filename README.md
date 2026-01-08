@@ -9,21 +9,21 @@ Production infrastructure managed via Pulumi (TypeScript) across multiple cloud 
 ```mermaid
 flowchart TB
     subgraph CF["Cloudflare"]
-        CF_SERVICES["DNS, CDN, DDoS Protection\nRate Limiting, TLS Termination"]
+        CF_SERVICES["DNS, CDN, DDoS Protection<br/>Rate Limiting, TLS Termination"]
     end
 
     subgraph HETZNER["Hetzner Cloud (Helsinki)"]
         subgraph K8S["K8s Cluster (Talos Linux)"]
-            CP["Control Plane\ncx22 · 2 vCPU · 4GB"]
-            SW["Service Worker\ncx22 · 2 vCPU · 4GB"]
-            AW["Application Worker\ncx32 · 4 vCPU · 8GB"]
+            CP["Control Plane<br/>cx22 · 2 vCPU · 4GB"]
+            SW["Service Worker<br/>cx22 · 2 vCPU · 4GB"]
+            AW["Application Worker<br/>cx32 · 4 vCPU · 8GB"]
         end
     end
 
     subgraph SERVICES["External Services"]
-        GCP["Google Cloud\nArtifact Registry\nCold Storage Backups"]
-        R2["Cloudflare R2\nTurbo Cache"]
-        GH["GitHub\nFlux CD · Webhooks"]
+        GCP["Google Cloud<br/>Artifact Registry<br/>Cold Storage Backups"]
+        R2["Cloudflare R2<br/>Turbo Cache"]
+        GH["GitHub<br/>Flux CD · Webhooks"]
     end
 
     CF --> HETZNER
