@@ -1,0 +1,7 @@
+name: gift-fight-infra
+description: Gift Fight infrastructure managed with Pulumi
+runtime:
+  name: nodejs
+  options:
+    packagemanager: pnpm
+    nodeargs: "--import tsx"

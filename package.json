@@ -1,0 +1,48 @@
+{
+  "name": "@gift-fight/infra",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "license": "MPL-2.0",
+  "private": true,
+  "scripts": {
+    "pulumi": "dotenv -e .env -- pulumi",
+    "deploy": "pnpm pulumi up",
+    "preview": "pnpm pulumi preview",
+    "destroy": "pnpm pulumi destroy",
+    "refresh": "pnpm pulumi refresh",
+    "kubeconfig:output": "pnpm pulumi stack output kubeconfig --show-secrets",
+    "kubeconfig:replace": "rm -rf ~/.kube/config && touch ~/.kube/config && pnpm kubeconfig:output > ~/.kube/config",
+    "talosconfig:output": "pnpm pulumi stack output talosConfig --show-secrets",
+    "lint": "biome lint .",
+    "lint:fix": "pnpm lint --write"
+  },
+  "packageManager": "pnpm@9.15.2",
+  "engines": {
+    "node": ">=20.0"
+  },
+  "dependencies": {
+    "@ptfm/infisical": "^0.14.4",
+    "@pulumi/cloudflare": "6.3.1",
+    "@pulumi/command": "^1.0.2",
+    "@pulumi/digitalocean": "^4.40.1",
+    "@pulumi/gcp": "^8.21.0",
+    "@pulumi/github": "^6.7.0",
+    "@pulumi/hcloud": "^1.24.0",
+    "@pulumi/kubernetes": "^4.21.1",
+    "@pulumi/pulumi": "^3.163.0",
+    "@pulumi/random": "^4.18.0",
+    "@pulumi/tls": "^5.1.0",
+    "@pulumiverse/talos": "^0.5.2",
+    "change-case": "^5.4.4",
+    "dotenv": "^16.4.7",
+    "dotenv-cli": "^8.0.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.6",
+    "@types/node": "^22.13.9",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}
